@@ -10,6 +10,9 @@ c.LabApp.shortcuts = [
         "args": {"kernelName": None, "cwd": None, "filePath": "welcome.md"},
         "category": "Launcher",
         "rank": 1,
+        "launcher_entry": {
+            'enabled': True,
+            'title': 'Welcome',
     }
 ]
 
