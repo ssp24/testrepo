@@ -2,7 +2,16 @@
 
 c = get_config()
 
-c.LabApp.default_url = '/lab/tree/welcome.md'
-
+# Create a launcher entry for welcome.md
 c.ServerApp.contents_manager_class = "jupyter_server.services.contents.largefilemanager.LargeFileManager"
+c.LabApp.shortcuts = [
+    {
+        "command": "launcher:create",
+        "args": {"kernelName": None, "cwd": None, "filePath": "welcome.md"},
+        "category": "Launcher",
+        "rank": 1,
+    }
+]
 
+# Optional: Set a custom name for the launcher entry
+c.LabApp.shortcuts[-1]["args"]["label"] = "Welcome"
