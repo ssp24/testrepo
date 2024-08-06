@@ -12,12 +12,3 @@ c.ServerProxy.servers = {
         },
     },
 }
-
-def launch_welcome(url):
-    return '/lab/tree/welcome.md'
-
-c.ServerProxy.host_whitelist = ['localhost']
-
-c.ServerProxy.handlers = [
-    ('welcome', launch_welcome),
-]
