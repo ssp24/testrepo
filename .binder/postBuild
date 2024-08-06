@@ -5,7 +5,7 @@ set -e
 mkdir -p $HOME/.jupyter/
 
 # Move the jupyter_notebook_config.py file to the correct location
-mv $HOME/.binder/jupyter_notebook_config.py $HOME/.jupyter/
+mv $HOME/binder/jupyter_notebook_config.py $HOME/.jupyter/
 
 # Enable JupyterLab launcher
 jupyter labextension install @jupyterlab/server-proxy
