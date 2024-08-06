@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # move traitlet config in one of the Jupyter config directories
 mkdir -p $HOME/.jupyter/
