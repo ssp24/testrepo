@@ -1,0 +1,3 @@
+# move traitlet config in one of the Jupyter config directories
+mkdir -p $HOME/.jupyter/
+mv $HOME/binder/jupyter_notebook_config.py $HOME/.jupyter/
