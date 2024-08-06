@@ -1,6 +1,18 @@
 #!/bin/bash
-set -e
 
-# move traitlet config in one of the Jupyter config directories
+# Create the Jupyter config directory if it doesn't exist
 mkdir -p $HOME/.jupyter/
-mv $HOME/binder/jupyter_notebook_config.py $HOME/.jupyter/
+
+# Create or modify the Jupyter config file
+cat <<EOT > $HOME/.jupyter/jupyter_notebook_config.py
+c = get_config()
+
+# Set the default URL to open when JupyterLab starts
+c.LabApp.default_url = '/lab/tree/welcome.md'
+
+# Enable the server extension for opening files
+c.ServerApp.contents_manager_class = "jupyter_server.services.contents.largefilemanager.LargeFileManager"
+EOT
+
+# Make sure the config file has the correct permissions
+chmod 644 $HOME/.jupyter/jupyter_notebook_config.py
