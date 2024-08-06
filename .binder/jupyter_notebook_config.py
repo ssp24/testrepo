@@ -8,7 +8,6 @@ c.ServerProxy.servers = {
         'absolute_url': False,
         'launcher_entry': {
             'enabled': True,
-            'icon_path': '/home/jovyan/binder/welcome-icon.svg',
             'title': 'Welcome',
         },
     },
