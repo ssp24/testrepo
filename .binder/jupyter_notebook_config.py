@@ -10,12 +10,4 @@ c.ServerProxy.servers = {
             'title': 'OpenRefine Session',
         },
     },
-    'welcome': {
-        'command': ['echo', 'This is a placeholder command'],
-        'absolute_url': False,
-        'launcher_entry': {
-            'enabled': True,
-            'title': 'Welcome',
-        },
-    },
 }
