@@ -3,16 +3,11 @@
 # Create the Jupyter config directory if it doesn't exist
 mkdir -p $HOME/.jupyter/
 
-# Create or modify the Jupyter config file
-cat <<EOT > $HOME/.jupyter/jupyter_notebook_config.py
-c = get_config()
-
-# Set the default URL to open when JupyterLab starts
-c.LabApp.default_url = '/lab/tree/welcome.md'
-
-# Enable the server extension for opening files
-c.ServerApp.contents_manager_class = "jupyter_server.services.contents.largefilemanager.LargeFileManager"
-EOT
+# Move the jupyter_notebook_config.py file to the correct location
+mv jupyter_notebook_config.py $HOME/.jupyter/
 
 # Make sure the config file has the correct permissions
 chmod 644 $HOME/.jupyter/jupyter_notebook_config.py
+
+# Ensure welcome.md exists
+echo "# Welcome to My Binder Project" > welcome.md
