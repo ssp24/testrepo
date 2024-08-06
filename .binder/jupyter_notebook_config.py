@@ -1,7 +1,5 @@
 # Traitlet configuration file for jupyter-notebook.
 
-c = get_config()
-
 c.ServerProxy.servers = {
     'welcome': {
         'command': ['echo', 'This is a placeholder command'],
