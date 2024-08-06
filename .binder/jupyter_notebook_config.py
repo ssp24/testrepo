@@ -2,19 +2,23 @@
 
 c = get_config()
 
-# Create a launcher entry for welcome.md
-c.ServerApp.contents_manager_class = "jupyter_server.services.contents.largefilemanager.LargeFileManager"
-c.LabApp.shortcuts = [
-    {
-        "command": "launcher:create",
-        "args": {"kernelName": None, "cwd": None, "filePath": "welcome.md"},
-        "category": "Launcher",
-        "rank": 1,
-        "launcher_entry": {
+c.ServerProxy.servers = {
+    'welcome': {
+        'command': ['echo', 'This is a placeholder command'],
+        'absolute_url': False,
+        'launcher_entry': {
             'enabled': True,
+            'icon_path': '/home/jovyan/binder/welcome-icon.svg',
             'title': 'Welcome',
-    }
-]
+        },
+    },
+}
 
-# Optional: Set a custom name for the launcher entry
-c.LabApp.shortcuts[-1]["args"]["label"] = "Welcome"
+def launch_welcome(url):
+    return '/lab/tree/welcome.md'
+
+c.ServerProxy.host_whitelist = ['localhost']
+
+c.ServerProxy.handlers = [
+    ('welcome', launch_welcome),
+]
