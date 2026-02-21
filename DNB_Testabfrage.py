@@ -106,7 +106,7 @@ if confirm and searchterm:
         results = response.find('numberofrecords')   
         numberofrecords = results.text
         numberofrecords = int(numberofrecords)
-    except:
+    try:
         results2 = response.find("numberOfRecords")
         numberofrecords = results.text
         numberofrecords = int(numberofrecords)
