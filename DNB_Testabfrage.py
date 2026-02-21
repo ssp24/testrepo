@@ -926,7 +926,7 @@ text-align: center;
 </style>
 <div class="footer">
 <br><br><br>
-<p>Zuletzt aktualisiert am: 01.03.2022</a></p>
+<p>Zuletzt aktualisiert am: 21.02.2026</a></p>
 </div>
 """
 
