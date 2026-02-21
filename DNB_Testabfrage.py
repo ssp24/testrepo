@@ -103,17 +103,17 @@ if confirm and searchterm:
     gndm = response.find_all('record', {'type':'Authority'})
     
     try:
-        results = response.find('numberofrecords')   
+        results = response.find('numberOfRecords')   
         if results: 
             numberofrecords = results.text
             numberofrecords = int(numberofrecords)
         else: 
-            results2 = response.find("numberOfRecords")
+            results2 = response.find("numberofrecords")
             if results2: 
                 numberofrecords = results.text
                 numberofrecords = int(numberofrecords)
     except: 
-        numberofrecords = int(000000000000000)
+        numberofrecords = int(999)
     st.write("Gefundene Treffer:", numberofrecords)
         
     if numberofrecords >= 1:
