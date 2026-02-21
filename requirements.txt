@@ -3,4 +3,4 @@ pandas
 requests
 lxml
 bs4
-unicodedata
+unicodedata2
