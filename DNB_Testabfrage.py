@@ -100,11 +100,16 @@ if confirm and searchterm:
     
     records = response.find_all('record')
     records_marc = response.find_all('record', {'type':'Bibliographic'})
-    gndm = response.find_all('record', {'type':'Authority'})
+    gndm = response.find_all('record', {'type':'Authority'}
+    
     results = response.find('numberofrecords')  
-     
-    numberofrecords = results.text
-    numberofrecords = int(numberofrecords)
+    if results: 
+        numberofrecords = results.text
+        numberofrecords = int(numberofrecords)
+    else:
+        results2 = response.find("numberOfRecords")
+        numberofrecords = results.text
+        numberofrecords = int(numberofrecords)
     st.write("Gefundene Treffer:", numberofrecords)
         
     if numberofrecords >= 1:
