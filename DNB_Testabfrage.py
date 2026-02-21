@@ -104,12 +104,14 @@ if confirm and searchterm:
     
     try:
         results = response.find('numberofrecords')   
-        numberofrecords = results.text
-        numberofrecords = int(numberofrecords)
-    try:
-        results2 = response.find("numberOfRecords")
-        numberofrecords = results.text
-        numberofrecords = int(numberofrecords)
+        if results: 
+            numberofrecords = results.text
+            numberofrecords = int(numberofrecords)
+        else: 
+            results2 = response.find("numberOfRecords")
+            if results2: 
+                numberofrecords = results.text
+                numberofrecords = int(numberofrecords)
     except: 
         numberofrecords = int(000000000000000)
     st.write("Gefundene Treffer:", numberofrecords)
