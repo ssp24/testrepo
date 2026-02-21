@@ -96,7 +96,7 @@ def enquiry():
 
 if confirm and searchterm:
     r1 = enquiry()
-    response = BeautifulSoup(r1.content)
+    response = BeautifulSoup(r1.content, features="xml")
     
     records = response.find_all('record')
     records_marc = response.find_all('record', {'type':'Bibliographic'})
