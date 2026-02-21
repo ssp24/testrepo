@@ -100,7 +100,7 @@ if confirm and searchterm:
     
     records = response.find_all('record')
     records_marc = response.find_all('record', {'type':'Bibliographic'})
-    gndm = response.find_all('record', {'type':'Authority'}
+    gndm = response.find_all('record', {'type':'Authority'})
     
     try:
         results = response.find('numberofrecords')   
